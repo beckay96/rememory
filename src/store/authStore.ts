@@ -81,7 +81,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         .single();
       
       if (!existingProfile) {
-        // Trigger didn't work, create manually
+        // Trigger didn't work, create manually with all required fields
         const { data: profileData, error: profileError } = await supabase
           .from('users')
           .insert([{
@@ -89,6 +89,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
             name: userData.name,
             nickname: userData.nickname || null,
             neurotype_tags: userData.neurotype_tags,
+            brain_bucks_balance: 0,
+            streak_count: 0,
+            last_activity_date: new Date().toISOString().split('T')[0], // Format as YYYY-MM-DD for date type
+            subscription_status: 'free',
           }])
           .select()
           .single();
