@@ -195,7 +195,7 @@ export const AuthForm: React.FC = () => {
               transition={{ delay: 0.5 }}
               className="text-xs text-gray-500 text-center mt-4"
             >
-              Built by a neurodivergent mum, for everyone who needs a gentle compass. 💜
+              Built by a neurodivergent & epileptic mum, for everyone who needs a gentle compass. 💜
             </motion.p>
           )}
         </div>
