@@ -49,6 +49,41 @@ export type Database = {
           updated_at?: string;
         };
       };
+      user_preferences: {
+        Row: {
+          id: string;
+          user_id: string;
+          animations_enabled: boolean;
+          theme_mode: string;
+          reminder_frequency: string;
+          sound_enabled: boolean;
+          high_contrast: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          animations_enabled?: boolean;
+          theme_mode?: string;
+          reminder_frequency?: string;
+          sound_enabled?: boolean;
+          high_contrast?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          animations_enabled?: boolean;
+          theme_mode?: string;
+          reminder_frequency?: string;
+          sound_enabled?: boolean;
+          high_contrast?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
       memory_entries: {
         Row: {
           id: string;
@@ -140,6 +175,149 @@ export type Database = {
           updated_at?: string;
         };
       };
+      anchors: {
+        Row: {
+          id: string;
+          user_id: string;
+          title: string;
+          content: string;
+          anchor_type: string;
+          is_active: boolean;
+          sort_order: number;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          title: string;
+          content: string;
+          anchor_type?: string;
+          is_active?: boolean;
+          sort_order?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          title?: string;
+          content?: string;
+          anchor_type?: string;
+          is_active?: boolean;
+          sort_order?: number;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      events: {
+        Row: {
+          id: string;
+          user_id: string;
+          title: string;
+          description: string | null;
+          event_date: string;
+          location: string | null;
+          reminder_minutes: number;
+          is_completed: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          title: string;
+          description?: string | null;
+          event_date: string;
+          location?: string | null;
+          reminder_minutes?: number;
+          is_completed?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          title?: string;
+          description?: string | null;
+          event_date?: string;
+          location?: string | null;
+          reminder_minutes?: number;
+          is_completed?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      regroup_tools: {
+        Row: {
+          id: string;
+          user_id: string | null;
+          title: string;
+          description: string | null;
+          tool_type: string;
+          instructions: string | null;
+          duration_minutes: number;
+          is_favorite: boolean;
+          is_global: boolean;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id?: string | null;
+          title: string;
+          description?: string | null;
+          tool_type?: string;
+          instructions?: string | null;
+          duration_minutes?: number;
+          is_favorite?: boolean;
+          is_global?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string | null;
+          title?: string;
+          description?: string | null;
+          tool_type?: string;
+          instructions?: string | null;
+          duration_minutes?: number;
+          is_favorite?: boolean;
+          is_global?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      brain_bucks_ledger: {
+        Row: {
+          id: string;
+          user_id: string;
+          action_type: string;
+          amount: number;
+          description: string | null;
+          reference_id: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          action_type: string;
+          amount: number;
+          description?: string | null;
+          reference_id?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          action_type?: string;
+          amount?: number;
+          description?: string | null;
+          reference_id?: string | null;
+          created_at?: string;
+        };
+      };
       brain_buck_rewards: {
         Row: {
           id: string;
@@ -177,6 +355,44 @@ export type Database = {
           is_redeemed?: boolean;
           redeemed_at?: string | null;
           is_active?: boolean;
+          created_at?: string;
+          updated_at?: string;
+        };
+      };
+      subscriptions: {
+        Row: {
+          id: string;
+          user_id: string;
+          stripe_customer_id: string | null;
+          stripe_subscription_id: string | null;
+          plan_name: string;
+          status: string;
+          current_period_start: string | null;
+          current_period_end: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          stripe_customer_id?: string | null;
+          stripe_subscription_id?: string | null;
+          plan_name?: string;
+          status?: string;
+          current_period_start?: string | null;
+          current_period_end?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          stripe_customer_id?: string | null;
+          stripe_subscription_id?: string | null;
+          plan_name?: string;
+          status?: string;
+          current_period_start?: string | null;
+          current_period_end?: string | null;
           created_at?: string;
           updated_at?: string;
         };
